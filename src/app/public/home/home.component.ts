@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
     { name: 'Bass Drum', path: 'https://cdn.pixabay.com/audio/2022/03/29/audio_bfd22271ec.mp3', volume: 1 },
     { name: 'Drum', path: 'https://cdn.pixabay.com/audio/2022/03/24/audio_fd91e184a5.mp3', volume: 1 },
     {name: 'Rain', path: 'https://cdn.pixabay.com/audio/2022/05/17/audio_28d2030bd4.mp3', volume: 1},
+    {name: 'Lo-Fi One', path: 'https://cdn.pixabay.com/audio/2022/02/07/audio_c020718f4c.mp3', volume: 1}
   ];
   constructor() {}
 
