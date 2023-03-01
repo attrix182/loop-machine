@@ -4,6 +4,15 @@ height: 30vh;
 border: 1px solid black;
 }
 
+@media screen and (max-width: 600px) {
+  .play-section{
+    width: 95vw;
+    height: 30vh;
+    border: 2px solid black;
+  }
+
+}
+
 
 .sound-item{
   width: 10vw;
