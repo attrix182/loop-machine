@@ -1,0 +1,24 @@
+<div class="container mt-4" cdkDropListGroup>
+  <section class="play-section">
+    <div cdkDropList [cdkDropListData]="play" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of play" cdkDrag>
+        {{ item.name }}
+        <input type="text" [(ngModel)]="volume" />
+        <button (click)="stopAudio(item)">Stop</button>
+        <button (click)="setVolume(item)">Play</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="play-section mt-4">
+    <div cdkDropList [cdkDropListData]="sounds" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let sound of sounds" cdkDrag>
+        <article class="sound-item">
+          {{ sound.name }}
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<button (click)="stopAll()">Stop all</button>

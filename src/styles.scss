@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+
+
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+
+
+body{
+    background-color: #0b1d36;
+}
+
+.a-enter-vr-button{
+    display: none;
+}
+
+*::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+    background: #04131a;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #123f54;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
