@@ -6,12 +6,11 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
-import { NewSoundFormComponent } from './new-sound-form/new-sound-form.component';
+import { NewSoundFormComponent } from './public/home/new-sound-form/new-sound-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewSoundFormComponent,
   ],
   imports: [
     BrowserModule,

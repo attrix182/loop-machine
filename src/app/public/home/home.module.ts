@@ -12,8 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import { NewSoundFormComponent } from './new-sound-form/new-sound-form.component';
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, NewSoundFormComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

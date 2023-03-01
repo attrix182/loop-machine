@@ -1,21 +1,16 @@
-.play-section{
-width: 80vw;
-height: 30vh;
-border: 1px solid black;
+.play-section {
+  width: 80vw;
+  height: auto;
 }
 
 @media screen and (max-width: 600px) {
-  .play-section{
+  .play-section {
     width: 95vw;
     height: 30vh;
-    border: 2px solid black;
   }
-
 }
 
-
-
-.footer-buttons{
+.footer-buttons {
   position: absolute;
   bottom: 5vh;
   display: flex;
@@ -23,12 +18,11 @@ border: 1px solid black;
   justify-content: space-around;
 }
 
-.playing{
+.playing {
   background-color: rgb(186, 13, 4);
   animation: pulse 0.5s infinite;
   border-radius: 50%;
 }
-
 
 @keyframes pulse {
   0% {
@@ -40,20 +34,18 @@ border: 1px solid black;
   100% {
     box-shadow: 0 0 0 0 rgba(214, 23, 17, 0);
   }
-
 }
 
-.sound-item{
+.sound-item {
   width: 10vw;
   height: 5vh;
 }
 
-.example-container {
-  width: 400px;
-  max-width: 100%;
-  margin: 0 25px 25px 0;
-  display: inline-block;
-  vertical-align: top;
+.sound-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
 
 .example-list {
@@ -67,8 +59,8 @@ border: 1px solid black;
 
 .example-box {
   padding: 20px 10px;
-  background-color: white;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: rgb(42, 40, 40);
+  color: rgba(255, 255, 255, 0.87);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,12 +71,19 @@ border: 1px solid black;
   font-size: 14px;
 }
 
+.example-box-small {
+  padding: 15px 10px;
+  background-color: rgb(142, 168, 235);
+  color: rgba(0, 0, 0, 0.87);
+  cursor: move;
+  width: 30vw;
+  font-size: 14px;
+}
+
 .cdk-drag-preview {
   box-sizing: border-box;
   border-radius: 4px;
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-              0 8px 10px 1px rgba(0, 0, 0, 0.14),
-              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 .cdk-drag-placeholder {

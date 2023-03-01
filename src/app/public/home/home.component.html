@@ -3,7 +3,10 @@
     <div cdkDropList [cdkDropListData]="playSection" class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let item of playSection" cdkDrag>
         {{ item.name }}
-        <input class="mt-1" type="number" [(ngModel)]="volume" />
+
+        <mat-slider min="0" max="100" step="10" showTickMarks discrete [displayWith]="formatLabel">
+          <input [value]="100" [id]="item.name" matSliderThumb>
+        </mat-slider>
 
         <button  *ngIf="item.playing" (click)="stopAudio(item)" [class.playing]="item.playing" mat-fab color="primary">
           <mat-icon> stop_circle</mat-icon>
@@ -17,9 +20,9 @@
   </section>
 
   <section class="play-section mt-4">
-    <div cdkDropList [cdkDropListData]="soundsBank" (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let sound of soundsBank" cdkDrag>
-        <article class="sound-item">
+    <div class="sound-container" cdkDropList [cdkDropListData]="soundsBank" (cdkDropListDropped)="drop($event)">
+      <div class="example-box-small" *ngFor="let sound of soundsBank" cdkDrag>
+        <article class="sound-item-small">
           {{ sound.name }}
         </article>
       </div>
