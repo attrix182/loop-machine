@@ -3,9 +3,14 @@
     <div cdkDropList [cdkDropListData]="play" class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let item of play" cdkDrag>
         {{ item.name }}
-        <input type="text" [(ngModel)]="volume" />
-        <button (click)="stopAudio(item)">Stop</button>
-        <button (click)="setVolume(item)">Play</button>
+        <input class="mt-1" type="number" [(ngModel)]="volume" />
+        <button (click)="stopAudio(item)" mat-fab color="primary">
+          <mat-icon> stop_circle</mat-icon>
+        </button>
+
+        <button (click)="setVolume(item)" mat-fab color="primary">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
       </div>
     </div>
   </section>
@@ -21,4 +26,8 @@
   </section>
 </div>
 
-<button (click)="stopAll()">Stop all</button>
+<div style="position: absolute; bottom: 10vh; left: 40vw">
+  <button style="background-color: white;" (click)="stopAll()" mat-fab >
+    <mat-icon> stop_circle</mat-icon>
+  </button>
+</div>
