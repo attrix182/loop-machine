@@ -27,7 +27,11 @@
   </section>
 </div>
 
-<div style="position: absolute; bottom: 10vh; left: 43vw">
+<div class="footer-buttons">
+  <button style="background-color: white;" (click)="addSound()" mat-fab >
+    <mat-icon> add</mat-icon>
+  </button>
+
   <button style="background-color: white;" (click)="stopAll()" mat-fab >
     <mat-icon> stop_circle</mat-icon>
   </button>

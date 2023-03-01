@@ -13,6 +13,16 @@ border: 1px solid black;
 
 }
 
+
+
+.footer-buttons{
+  position: absolute;
+  bottom: 5vh;
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+}
+
 .playing{
   background-color: rgb(186, 13, 4);
   animation: pulse 0.5s infinite;
@@ -36,7 +46,6 @@ border: 1px solid black;
 .sound-item{
   width: 10vw;
   height: 5vh;
-
 }
 
 .example-container {

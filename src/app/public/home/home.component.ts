@@ -1,5 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { NewSoundFormComponent } from 'src/app/new-sound-form/new-sound-form.component';
 
 export interface SoundModel {
   name: string;
@@ -11,11 +13,10 @@ export interface SoundModel {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent{
   playSection: any[] = [];
   playingSounds: any[] = [];
   volume: number = 100;
-
 
   soundsBank: SoundModel[] = [
     { name: 'Bass Drum', path: 'https://cdn.pixabay.com/audio/2022/03/29/audio_bfd22271ec.mp3' },
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
     { name: 'Rain', path: 'https://cdn.pixabay.com/audio/2022/05/17/audio_28d2030bd4.mp3' },
     { name: 'Lo-Fi One', path: 'https://cdn.pixabay.com/audio/2022/02/07/audio_c020718f4c.mp3' }
   ];
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   drop(event: CdkDragDrop<SoundModel[]>) {
     if (event.previousContainer === event.container) {
@@ -71,8 +72,18 @@ export class HomeComponent implements OnInit {
     this.playingSounds = [];
     this.playSection.forEach((sound) => (sound.playing = false));
     this.playSection = [];
-
   }
 
-  ngOnInit(): void {}
+  addSound(){
+    const dialogRef = this.dialog.open(NewSoundFormComponent, {
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
+  }
+
+
 }
