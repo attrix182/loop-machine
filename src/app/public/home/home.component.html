@@ -1,14 +1,15 @@
 <div class="container mt-4" cdkDropListGroup>
   <section class="play-section">
-    <div cdkDropList [cdkDropListData]="play" class="example-list" (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of play" cdkDrag>
+    <div cdkDropList [cdkDropListData]="playSection" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of playSection" cdkDrag>
         {{ item.name }}
         <input class="mt-1" type="number" [(ngModel)]="volume" />
-        <button (click)="stopAudio(item)" mat-fab color="primary">
+
+        <button  *ngIf="item.playing" (click)="stopAudio(item)" [class.playing]="item.playing" mat-fab color="primary">
           <mat-icon> stop_circle</mat-icon>
         </button>
 
-        <button (click)="setVolume(item)" mat-fab color="primary">
+        <button *ngIf="!item.playing"  (click)="playAudio(item)" mat-fab color="primary">
           <mat-icon>play_arrow</mat-icon>
         </button>
       </div>
@@ -16,8 +17,8 @@
   </section>
 
   <section class="play-section mt-4">
-    <div cdkDropList [cdkDropListData]="sounds" (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let sound of sounds" cdkDrag>
+    <div cdkDropList [cdkDropListData]="soundsBank" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let sound of soundsBank" cdkDrag>
         <article class="sound-item">
           {{ sound.name }}
         </article>
@@ -26,7 +27,7 @@
   </section>
 </div>
 
-<div style="position: absolute; bottom: 10vh; left: 40vw">
+<div style="position: absolute; bottom: 10vh; left: 43vw">
   <button style="background-color: white;" (click)="stopAll()" mat-fab >
     <mat-icon> stop_circle</mat-icon>
   </button>

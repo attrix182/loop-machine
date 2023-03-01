@@ -13,6 +13,25 @@ border: 1px solid black;
 
 }
 
+.playing{
+  background-color: rgb(186, 13, 4);
+  animation: pulse 0.5s infinite;
+  border-radius: 50%;
+}
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(143, 19, 12);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(235, 21, 5, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(214, 23, 17, 0);
+  }
+
+}
 
 .sound-item{
   width: 10vw;
